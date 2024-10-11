@@ -2,14 +2,13 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {FC} from 'react';
 import {KeyScreen, ScreenProps} from 'src/navigation';
 
-const HomeScreen: FC<ScreenProps> = ({navigation, route}) => {
-  //navigation.navigate(KeyScreen.Details, {itemId: 86});
+const HomeScreen: FC<ScreenProps> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => {
           console.log('HomeScreen');
-          navigation.navigate(KeyScreen.Details, {itemId: 86});
+          navigation.navigate(KeyScreen.TopTab);
         }}>
         <Text>HomeScreen</Text>
       </TouchableOpacity>
