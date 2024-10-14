@@ -6,6 +6,7 @@ export enum KeyScreen {
   BottomTab = 'BottomTabNavigator',
   Drawer = 'DrawerNavigator',
   TopTab = 'TopTabNavigator',
+  WelCome = 'WelComeScreen',
 }
 
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -16,6 +17,7 @@ export type RootStackParamList = {
   [KeyScreen.BottomTab]: undefined;
   [KeyScreen.Drawer]: undefined;
   [KeyScreen.TopTab]: undefined;
+  [KeyScreen.WelCome]: undefined;
 };
 
 export type RootStackNavigationProp =

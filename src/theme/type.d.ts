@@ -7,8 +7,13 @@ declare module '@react-navigation/native' {
   export type ExtendTheme = {
     dark: boolean;
     colors: {
-      //The primary color of the app used to tint various elements.
-      //Usually you'll want to use your brand color for this.
+      primary: string;
+      background: string;
+      card: string;
+      text: string;
+      border: string;
+      notification: string;
+      backgroundColor: string;
     };
   };
   export function useTheme(): ExtendTheme;

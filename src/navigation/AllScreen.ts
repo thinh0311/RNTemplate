@@ -3,6 +3,7 @@ import {KeyScreen, ScreenProps} from '.';
 import HomeScreen from 'src/screens/HomeScreen';
 import DetailScreen from 'src/screens/DetailScreen';
 import {BottomTabNavigator, DrawerNavigator, TopTab} from './Navigator';
+import WelcomeScreen from 'src/screens/WelcomeScreen';
 
 export interface IScreen {
   name: KeyScreen;
@@ -10,6 +11,10 @@ export interface IScreen {
 }
 
 export const AllScreen: IScreen[] = [
+  {
+    name: KeyScreen.WelCome,
+    component: WelcomeScreen,
+  },
   {
     name: KeyScreen.BottomTab,
     component: BottomTabNavigator,

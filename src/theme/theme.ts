@@ -4,7 +4,8 @@ const MyTheme: ExtendTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: 'rgb(255, 45, 85)',
+    primary: '#06A0B5',
+    backgroundColor: '#000000',
   },
 };
 
@@ -12,9 +13,11 @@ const MyThemeDark: ExtendTheme = {
   ...DefaultTheme,
   dark: true,
   colors: {
-    ...DefaultTheme.colors,
-    primary: 'rgb(255, 45, 85)',
+    ...MyTheme.colors,
   },
 };
 
-export {MyTheme, MyThemeDark};
+export const Themes = {
+  light: MyTheme,
+  dark: MyThemeDark,
+};

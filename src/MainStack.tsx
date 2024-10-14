@@ -1,10 +1,11 @@
-import React, {FC} from 'react';
+import React, {FC, useCallback} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {AllScreen} from './navigation/AllScreen';
-import {KeyScreen, RootStackParamList} from './navigation';
+import {RootStackParamList} from './navigation';
 import {ColorSchemeName} from 'react-native';
-import {MyTheme, MyThemeDark} from './theme/theme';
+import {Themes} from './theme/theme';
+import BootSplash from 'react-native-bootsplash';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
@@ -13,10 +14,16 @@ interface MainStackProps {
 }
 
 const MainStack: FC<MainStackProps> = ({currentTheme}) => {
+  const onReady = useCallback(() => {
+    console.log('Navigation is ready');
+    BootSplash.hide({fade: true});
+  }, []);
+
   return (
     <NavigationContainer
-      theme={currentTheme === 'dark' ? MyThemeDark : MyTheme}>
-      <RootStack.Navigator initialRouteName={KeyScreen.BottomTab}>
+      theme={currentTheme === 'dark' ? Themes.dark : Themes.light}
+      onReady={onReady}>
+      <RootStack.Navigator>
         {AllScreen.map(screen => (
           <RootStack.Screen
             key={screen.name}
